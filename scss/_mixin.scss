@@ -1,0 +1,60 @@
+@mixin gridMenu ($name) {
+    .#{$name}__menu{
+        margin: 30px auto 30px auto;
+        // background-color: $third-color;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px,1fr)); 
+        gap: 20px;
+        .#{$name}__grid--item{
+            margin: 15px 20px 15px 20px;
+            background-color: $bg-color-main;
+            box-shadow: 5px 5px 15px 5px $second-color;
+            text-align: center;
+            .#{$name}__item--img{
+                width: 100%;
+                height: auto;
+                margin: 10px auto auto auto;
+                img{
+                    width: 90%;
+                    height: auto;
+                }
+            }
+            .#{$name}__item--title{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $main-color;
+                padding-bottom: 10px;
+            }
+            .#{$name}__item--description{
+                color: $second-color;
+                text-align:center;
+                font-family: sans-serif;
+                word-spacing:-2px;
+                line-height: 27px;
+                padding: 0px 20px 10px 20px;
+            }
+        }
+    }
+}
+
+@mixin bannerMQ ($mq, $bannerWrapper, $title, $fsT, $description, $fsD) {
+    @media screen and (min-width:#{$mq}px){
+        .#{$bannerWrapper}{
+            .#{$title}{
+                font-size: #{$fsT}rem;
+                text-align: center;
+                width: 100%;
+            }
+            .#{$description}{
+                font-size: #{$fsD}rem;
+            }
+    
+        }
+    }
+}
+                    
+        
+            
+            
+                
+                

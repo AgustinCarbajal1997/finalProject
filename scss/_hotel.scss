@@ -1,0 +1,194 @@
+@import "mixin";
+.container-fluid{
+    padding: 0;
+}
+                                /* BANNER HOTEL*/
+.banner__hotel{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    background-color: black;
+    .banner__hotel--img{
+        background-image: linear-gradient(to top,rgba(65, 65, 65, 0), rgba(0, 0, 0, 0.322), rgba(0, 0, 0, 0.603),rgba(0, 0, 0, 0.986)), url(../assets/hotel/banner-room.webp);
+        width: 100%;
+        height: 100%;
+        background-repeat: none;
+        
+        background-size: cover;
+        animation-name: degrade;
+        animation-timing-function:ease-out;
+        animation-duration: 4s;
+    }
+    .banner__hotel--title{
+        
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: $bg-color-main;
+        animation-name: bannerHotel;
+        animation-timing-function: ease;
+        animation-duration: 2s;
+    }
+    .banner__hotel--description{
+        position: absolute;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%,-50%);
+        font-size: .8rem;
+        font-weight: 600;
+        color: $bg-color-main;
+        animation-name: stars;
+        animation-timing-function:ease-out;
+        animation-duration: 4s;
+    }
+}
+@keyframes bannerHotel {
+    0%{
+        transform: scale(3);
+        top: 50%;
+        left: 0%;
+    }
+    100%{
+        transform: scale(1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+    }
+
+}
+
+
+
+                                /* DESCRIPCION HOTEL*/
+.habitaciones-description{
+    text-align: center;
+    h2{
+        color: $main-color;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 10px;
+        margin-bottom: 3px;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 35px;
+        color: $second-color;
+        font-family: sans-serif;
+    }
+}
+    
+                                /* GRID DE HABITACIONES*/
+.room__grid{   
+    // background-color: $third-color;
+    .room__grid--item{
+        background-color: $bg-color-main;
+        margin: 30px auto 30px auto;
+        width: 95%;
+        box-shadow: 5px 5px 15px 5px $second-color;
+        .room__grid--img{
+            margin-top: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            img{
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+        .room__grid--content{
+            h2{
+                text-align: center;
+                color: $main-color;
+                font-size: 2rem;
+            }
+            ul li,
+            p{
+                color: $second-color;
+                font-family: sans-serif;
+                line-height:30px
+            }
+        }
+    }
+}
+.optional-services-room{
+    // background-color: $third-color;
+    margin-top: 80px;
+    .optional-services__card{
+        background-color: $bg-color-main;
+        margin:30px;
+        box-shadow: 5px 5px 15px 5px $second-color;
+        .service-img__card{
+            width: 100%;
+            height: auto;
+            text-align: center;
+            padding-top: 10px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h3{
+            color: $main-color;
+            text-align: center;
+        }
+        h4{
+            color: $second-color;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        p{
+            color: $second-color;
+            font-family: sans-serif;
+            line-height: 25px;
+        }
+    }
+}
+                        /* MIXIN PARA MANEJAR MEDIAQUERIES DE BANNER*/  
+@include bannerMQ(500,"banner__hotel","banner__hotel--title",2,"banner__hotel--description",1);
+@include bannerMQ(780,"banner__hotel","banner__hotel--title",3,"banner__hotel--description",1.2);
+@include bannerMQ(1050,"banner__hotel","banner__hotel--title",3,"banner__hotel--description",1.5);
+
+                /* MEDIA QUERIE PARA MANTENER PROPORCIONAL LA DESCRIPCION DEL HOTEL*/
+@media screen and (min-width:780px){
+    .optional-services-room{
+        // background-color: $third-color;
+        margin:40px;
+        // padding: 20px;
+        
+    }                 
+}              
+@media screen and (min-width:1050px){
+    .habitaciones-description{
+        text-align: center;
+        padding: 0px 100px 0px 100px;
+        h2{
+            color: $main-color;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 10px;
+            margin-bottom: 3px;
+        }
+        p{
+            font-size: 1rem;
+            line-height: 35px;
+            color: $second-color;
+        }
+    }
+    .optional-services-room{
+        // background-color: $third-color;
+        margin:40px;
+        // padding: 20px;
+        
+    }
+}
+        
+    
+
+    
+
+      

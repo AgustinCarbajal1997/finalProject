@@ -1,0 +1,63 @@
+@import "mixin";
+.banner__drink{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    .banner__drink--img{
+        background-image: linear-gradient(to top,rgba(0, 0, 0, 0.100), rgba(0, 0, 0, 0.400), rgba(0, 0, 0, 0.700),rgba(0, 0, 0, 0.876)), url(../assets/drink/bannerCocktail.webp);
+        height: 100%;
+        background-size: cover;
+        background-position: center ;
+        animation-name: degrade;
+        animation-timing-function:ease-out;
+        animation-duration: 3s;
+    }
+    .banner__drink--title{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #ffffff;
+        font-size: 2rem;
+        font-weight: 500;
+        animation-name: stars;
+        animation-timing-function:ease-out;
+        animation-duration: 4s;
+    }
+    .banner__drink--description{
+        position: absolute;
+        width: 80%;
+        text-align: center;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 500;
+        animation-name: stars;
+        animation-timing-function:ease-out;
+        animation-duration: 4s;
+    }
+}
+
+.drink__explanation--title{
+    letter-spacing: 2px;
+    color: $main-color;
+    text-align: center
+}
+.drink__explanation--description{
+    color: $second-color;
+    padding: 10px;
+    text-align:center;
+    font-family: sans-serif;
+    line-height: 30px;
+    font-size: 1.1rem;
+}
+    
+@include gridMenu("drink");
+
+@include bannerMQ(500,"banner__drink","banner__drink--title",3,"banner__drink--description",1);
+@include bannerMQ(780,"banner__drink","banner__drink--title",4,"banner__drink--description",1.2);
+@include bannerMQ(1050,"banner__drink","banner__drink--title",6,"banner__drink--description",1.2);
